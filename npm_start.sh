@@ -71,3 +71,22 @@ EOM
 echo "$Webpack" > webpack.config.js
 
 tsc --init
+
+npm -S @types/node
+
+cd dist
+indexs=`cat << EOM
+<!DOCTYPE html>
+<html lang='ja'>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello typescript</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
+EOM
+`
+echo "$indexs" > index.html
